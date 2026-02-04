@@ -30,4 +30,7 @@ public class Client {
     @Column(length = 50)
     @NonNull private String telephone;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "no_adresse")
+    private Adresse adresse;
 }
