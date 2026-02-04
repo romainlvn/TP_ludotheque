@@ -32,7 +32,7 @@ public class ClientRepositoryTest {
     }
 
     @Test
-    @DisplayName("Creation d'un client avec JPA")
+    @DisplayName("Creation d'un client avec une adresse")
     void should_save_client_with_address() {
         //Arrange
         Adresse adr = new Adresse("12 rue des jeux", "75000", "Paris");
