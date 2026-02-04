@@ -1,5 +1,6 @@
 package fr.eni.tp_ludotheque.dal;
 
+import fr.eni.tp_ludotheque.bo.Adresse;
 import fr.eni.tp_ludotheque.bo.Client;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,14 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class ClientRepositoryTest {
 
     @Autowired
     private ClientRepository clientRepo;
+    private AdresseRepository adresseRepo;
 
     @Test
     @DisplayName("Creation d'un client avec JPA")
@@ -28,6 +29,21 @@ public class ClientRepositoryTest {
 
         assertTrue(clientRecupere.isPresent());
         assertEquals(1, clientRecupere.get().getNo_client());
+    }
+
+    @Test
+    @DisplayName("Creation d'un client avec JPA")
+    void should_save_client_with_address() {
+        //Arrange
+        Adresse adr = new Adresse("12 rue des jeux", "75000", "Paris");
+        Client client = new Client("Durand", "Marie", "marie@email.com", "0600000000");
+
+        //Act
+        client.setAdresse(adr);
+        Client client1 = clientRepo.save(client);
+
+        assertNotEquals(null, client1.getAdresse());
+        assertEquals("Paris", client1.getAdresse().getVille());
     }
 
     /*public void testFindByIdClient() {
