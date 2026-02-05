@@ -15,7 +15,7 @@ public class Adresse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer no_adresse;
+    private Integer no_adresse;
 
     @Column(nullable = false, length = 150)
     @NonNull
