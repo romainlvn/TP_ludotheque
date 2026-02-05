@@ -2,6 +2,7 @@ package fr.eni.tp_ludotheque.dal;
 
 import fr.eni.tp_ludotheque.bo.Adresse;
 import fr.eni.tp_ludotheque.bo.Client;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class ClientRepositoryTest {
 
     @Test
     @DisplayName("Creation d'un client avec JPA")
+    @Transactional
     void should_save_and_find_client() {
         Client nouveauClient = new Client("NomTest", "PrenomTest", "test@eni.fr", "0102030405");
 
@@ -33,6 +35,7 @@ public class ClientRepositoryTest {
 
     @Test
     @DisplayName("Creation d'un client avec une adresse")
+    @Transactional
     void should_save_client_with_address() {
         //Arrange
         Adresse adr = new Adresse("12 rue des jeux", "75000", "Paris");

@@ -1,6 +1,7 @@
 package fr.eni.tp_ludotheque.dal;
 
 import fr.eni.tp_ludotheque.bo.Adresse;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class AdresseRepositoryTest {
 
     @Test
     @DisplayName("Creation d'un adresse avec JPA")
+    @Transactional
     void should_save_and_find_adresse() {
         Adresse nouveauAdresse = new Adresse("Rue de ici", "86000", "Poitiers");
 

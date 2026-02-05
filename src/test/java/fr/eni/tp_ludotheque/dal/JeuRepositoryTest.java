@@ -1,6 +1,7 @@
 package fr.eni.tp_ludotheque.dal;
 
 import fr.eni.tp_ludotheque.bo.Jeu;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class JeuRepositoryTest {
 
     @Test
     @DisplayName("Creation d'un jeu avec JPA")
+    @Transactional
     void should_save_and_find_jeu() {
         Jeu nouveauJeu = new Jeu("tft","riotgamestft",16,"gnar po de guerre", 7.5);
 
