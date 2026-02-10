@@ -1,0 +1,9 @@
+Reste à faire : 
+S3028 - API REST pour enregistrer le retour d'une ou plusieurs locations et générer la facture
+(En tant qu'employe, je  peux scanner un ou plusieurs codebarres d'exemplaires, enregistrer
+le retour et générer la facture )
+
+[ ------- Optionnel ---------------]
+S3029 - Pour la liste des jeux et le nombre d'exemplaire disponible par jeu : utiliser une fonction SqlServer
+S3030 - relancer un client
+S3031 - ajouter un exemplaire au fond de jeux
